@@ -1,15 +1,9 @@
 import express from "express"
 const router = express.Router()
 import User from "../models/User.js";
+import { register } from "../controllers/users.js";
 
 
-router.post("/register", (req, res) => {
-    try{
-        const { fName, lName, email, password } = req.body;
-        console.log(email, password);
-    }catch(error){
-        console.error(error);
-    }
-})
+router.post("/register", register)
 
 export default router;
